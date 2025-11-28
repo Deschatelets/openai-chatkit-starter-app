@@ -15,18 +15,15 @@ export function ErrorOverlay({
   onRetry,
   retryLabel,
 }: ErrorOverlayProps) {
-  if (!error && !fallbackMessage) {
-    return null;
-  }
-
   const content = error ?? fallbackMessage;
-
-  if (!content) {
-    return null;
-  }
+  const isVisible = Boolean(content);
 
   return (
-    <div className="pointer-events-none absolute inset-0 z-10 flex h-full w-full flex-col justify-center rounded-[inherit] bg-white/85 p-6 text-center backdrop-blur dark:bg-[#1a1a1a]/90">
+    <div
+      className={`pointer-events-none absolute inset-0 z-10 flex h-full w-full flex-col justify-center rounded-[inherit] bg-white/85 p-6 text-center backdrop-blur transition-opacity duration-300 ease-out dark:bg-[#1a1a1a]/90 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <div className="pointer-events-auto mx-auto w-full max-w-md rounded-xl bg-white px-6 py-4 text-lg font-medium text-slate-700 dark:bg-transparent dark:text-slate-100">
         <div>{content}</div>
         {error && onRetry ? (

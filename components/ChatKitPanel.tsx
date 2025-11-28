@@ -348,11 +348,11 @@ export function ChatKitPanel({
       <ChatKit
         key={widgetInstanceKey}
         control={chatkit.control}
-        className={
+        className={`block h-full w-full transition-opacity duration-300 ease-out ${
           blockingError || isInitializingSession
             ? "pointer-events-none opacity-0"
-            : "block h-full w-full"
-        }
+            : "opacity-100"
+        }`}
       />
       <ErrorOverlay
         error={blockingError}
