@@ -20,7 +20,7 @@ export function ErrorOverlay({
 
   return (
     <div
-      className={`pointer-events-none absolute inset-0 z-10 flex h-full w-full flex-col justify-center rounded-[inherit] bg-white/85 p-6 text-center backdrop-blur transition-opacity duration-300 ease-out dark:bg-[#1a1a1a]/90 ${
+      className={`pointer-events-none absolute inset-0 z-10 flex h-full w-full flex-col justify-center rounded-[inherit] bg-[#f9f3f1] p-6 text-center transition-opacity duration-300 ease-out dark:bg-[#1a1a1a] ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
