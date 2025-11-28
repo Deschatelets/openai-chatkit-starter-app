@@ -9,6 +9,8 @@ import {
   CREATE_SESSION_ENDPOINT,
   WORKFLOW_ID,
   getThemeConfig,
+  COMPOSER_TOOLS,
+  ATTACHMENT_CONFIG,
 } from "@/lib/config";
 import { ErrorOverlay } from "./ErrorOverlay";
 import type { ColorScheme } from "@/hooks/useColorScheme";
@@ -273,10 +275,8 @@ export function ChatKitPanel({
     },
     composer: {
       placeholder: PLACEHOLDER_INPUT,
-      attachments: {
-        // Enable attachments
-        enabled: true,
-      },
+      attachments: ATTACHMENT_CONFIG,
+      tools: COMPOSER_TOOLS,
     },
     threadItemActions: {
       feedback: false,
